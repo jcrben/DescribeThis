@@ -18,18 +18,23 @@ Once the project moves into development, the press release can be used as a touc
  
 ## Heading ##
   > Name the product in a way the reader (i.e. your target customers) will understand.
+  CloudSourced
 
 ## Sub-Heading ##
   > Describe who the market for the product is and what benefit they get. One sentence only underneath the title.
+  For busy knowledge seekers: deal with the information overload by seeing what other people are reading and re-reading and saving, with additional tags and comments from people.
 
 ## Summary ##
   > Give a summary of the product and the benefit. Assume the reader will not read anything else so make this paragraph good.
+  Store a cached copy of the article and mark up when you read it, whether you read it thoroughly, and whether you think you should return to it later (set reminders).
 
 ## Problem ##
   > Describe the problem your product solves.
+Deals with information overload and light content.
 
 ## Solution ##
   > Describe how your product elegantly solves the problem.
+People will return to important content over and over.
 
 ## Quote from You ##
   > A quote from a spokesperson in your company.

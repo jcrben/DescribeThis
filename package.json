@@ -1,0 +1,27 @@
+{
+  "name": "CloudSourced",
+  "version": "0.0.1",
+  "description": "Store and tag articles",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jcrben/2015-02-solo.git"
+  },
+  "keywords": [
+    "articles",
+    "resources",
+    "crowdsourcing"
+  ],
+  "author": "Ben Creasy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jcrben/2015-02-solo/issues"
+  },
+  "homepage": "https://github.com/jcrben/2015-02-solo"
+}
