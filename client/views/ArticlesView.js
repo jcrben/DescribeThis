@@ -5,6 +5,7 @@ var ArticlesView = Backbone.View.extend({
 
   initialize: function() {
     this.render();
+    debugger;
     this.collection.on('add remove sync', this.render, this);
   },
 
