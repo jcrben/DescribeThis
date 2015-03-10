@@ -34,20 +34,22 @@ var ArticleShortView = Backbone.View.extend({
   },
 
   edit: function(e) {
-    console.log('firing');
+    console.log('firing edit');
     console.log(this);
     var attrName = $(e.currentTarget).attr("class");
     $(e.currentTarget).replaceWith('<textarea class="editing">'+this.model.get(attrName)+'</textarea>' +
     '<button style="display:inline" data-attrName'+attrName+' class="saveEdit">');
-    $('.saveEdit').data("attrName", attrName)
+    $('.saveEdit').data("attrName", attrName);
+    $('.saveEdit').on('click', this.saveEdit.bind(this));
   },
 
   saveEdit: function(e) {
-    console.log('firing');
+    console.log('firing saveEdit');
     var attrName = $(e.currentTarget).data('attrName');
     var updatedContent = $('.editing').val();
     debugger;
     this.model.set(attrName, updatedContent);
+    this.model.save();
   },
 
   favorite: function() {

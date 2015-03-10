@@ -24,6 +24,28 @@ app.get('/articles', function(req, res) {
   });
 });
 
+app.put('/article', function(req, res) {
+  var id = req.body.id;
+  var summary = req.body.summary;
+  console.log(id, summary);
+  // console.log(req.body);
+  // console.log(data);
+  // console.log('entering /article');
+  new Article({id: id}).fetch().then(function(found) {
+        found.set({summary: summary});
+        found.save();
+        res.status(200).send(found);
+        }).catch(function(err) {
+            console.log('updating article err', err);
+            });
+        // .set({summary: summary});
+                // .then(function() {
+                //   console.log('success');
+                // }).catch(function(err) {
+                //   console.log('err saving', err);
+                // });
+});
+
 app.post('/newarticle', function(req, res) {
   var data = JSON.parse(req.body.data);
   var url = data.url;

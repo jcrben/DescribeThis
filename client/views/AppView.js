@@ -5,7 +5,6 @@ var AppView = Backbone.View.extend({
     this.libraryView = new ArticlesView({collection: this.model.get('library')});
     $('.add').click(function(e) {
       e.preventDefault();
-      debugger;
       var data = {};
       $(".formNewArticle").serializeArray()
                           .map(function(x){data[x.name] = x.value;}); ;

@@ -8,6 +8,9 @@ var Article = Backbone.Model.extend({
     tags: []
   },
 
+  initialize: function() {
+  },
+
   favorite: function() {
     this.trigger('favorite', this);
   },
