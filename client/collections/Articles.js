@@ -1,4 +1,5 @@
 
 var Articles = Backbone.Collection.extend({
-  model: Article
+  model: Article,
+  url: '/articles'
 });

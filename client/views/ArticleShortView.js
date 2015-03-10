@@ -6,18 +6,20 @@ var ArticleShortView = Backbone.View.extend({
   template: _.template('<ul>' + 
       '<li class="title"><%- title %></li>' + 
       '<li class="summary"><%- summary %></li>' +
-      '<li class="url">URL: <%- url %></li><button value="Fetch title and snippet">' + 
-      '<li>Tags: ' +
+      '<li class="url">URL: <%- url %></li>' + 
+      '<li class="tags">Tags: ' +
       '<% for (var i = 0; i < tags.length; i++) {%>' +
-      '<%-tags[i]%><% if (i !== tags.length-1) {%>, <% } %>' +
+      '<button><%-tags[i]%></button><% if (i !== tags.length-1) {%>, <% } %>' +
       '<% } %>' +
     '</ul>'),
 
   events: {
     // 'click .star': function() { this.model.favorite(); },
     // 'click .tag': function() {},
-    "click li": "edit",
-    // "click": "edit"
+    "click li.tags": "filterTags",
+    "click li.title": "edit",
+    "click li.summary": "edit",
+    "click li.url": "edit",
     "click .saveEdit": "saveEdit"
   },
 

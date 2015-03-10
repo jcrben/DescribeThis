@@ -13,4 +13,14 @@ button:active {
   background-color: yellow;
 }
 
+input.fetchURL {
+  display: inline;
+}
 
+div.article {
+  border: 1px black solid;
+}
+
+.inputNewArticle {
+  border: 1px black solid;
+}

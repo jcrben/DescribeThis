@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html>
+  <head>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  </head>
   <body>
     <!-- Scripts may be placed anywhere on a page. But FYI, they block rendering of elements
      below them until after the scripts load-->
@@ -17,11 +20,13 @@
     <script src="views/ArticleShortView.js"></script>
     <script src="views/AppView.js"></script>
 
-    <div>
-        <input style="display:block" class="addUrl" type="text" size="35" placeholder="Insert URL">
+    <div class="inputNewArticle">
+    <form>
+        <input style="display:inline" class="addUrl" type="text" size="35" placeholder="Insert URL"><input class="FetchURL" type="button" value="Fetch"><br>
         <textarea class="addSummary" placeholder="Summarize the article" rows="10" cols="35"></textarea>
         <input class="addTags" style="display:block" size="35" placeholder="Add comma-delimited tags"></input>
-        <button class="add" value="Submit">
+        <input type="button" class="add" value="Add to library">
+    </form>
     </div>
 
     <script>

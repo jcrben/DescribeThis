@@ -5,7 +5,7 @@ var UserView = Backbone.View.extend({
   className: 'user',
   template: '<%=name>',
   initialize: function() {
-    this.render()
+    this.render();
   },
 
   // setSong: function(song){
