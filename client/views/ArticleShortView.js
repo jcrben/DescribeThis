@@ -17,10 +17,10 @@ var ArticleShortView = Backbone.View.extend({
     // 'click .star': function() { this.model.favorite(); },
     // 'click .tag': function() {},
     "click li.tags": "filterTags",
-    "click li.title": "edit",
-    "click li.summary": "edit",
-    "click li.url": "edit",
-    "click .saveEdit": "saveEdit"
+    "dblclick li.title": "edit",
+    "dblclick li.summary": "edit",
+    "dblclick li.url": "edit",
+    "dblclick .saveEdit": "saveEdit"
   },
 
   initialize: function() {

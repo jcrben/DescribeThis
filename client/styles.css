@@ -23,4 +23,5 @@ div.article {
 
 .inputNewArticle {
   border: 1px black solid;
+  width: 350px;
 }

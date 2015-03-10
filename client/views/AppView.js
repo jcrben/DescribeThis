@@ -2,16 +2,38 @@
 var AppView = Backbone.View.extend({
 
   initialize: function(params){
-    // this.UserView = new UserView({model: User});
-    this.libraryView = new LibraryView({collection: this.model.get('library')});
+    this.libraryView = new ArticlesView({collection: this.model.get('library')});
     $('.add').click(function(e) {
+      e.preventDefault();
       var url = $('.addUrl').val();
-      var summary = $('addSUmmary').val();
-      debugger;
+      var title = $('.addTitle').val();
+      var summary = $('.addSummary').val();
       var tags = $('.addTags').val();
       tags = tags.split(',');
-      this.model.get('library').add({url: url, summary: summary, tags: tags});
+      console.log(library);
+      var newArticle = {
+        url: url,
+        title: title,
+        summary: summary,
+        tags: tags
+      };
+      var library = this.model.get('library').add(newArticle);
+      $.post('/newarticle', {
+        data: JSON.stringify(newArticle),
+        dataType: 'json',
+        contentType: 'application/json',
+        success: function(data) {
+          // library.add(data);
+          // console.log(library);
+          // library.trigger('add');
+        },
+        error: function(err) {
+          console.log('error on post');
+        }
+      });
     }.bind(this));
+    //   this.model.get('library').add({url: url, summary: summary, tags: tags});
+    // }.bind(this));
     // change:currentSong - this is Backbone's way of allowing you to filter events to
     // ONLY receive change events for the specific property, 'currentSong'
     // this.model.on('change:currentSong', function(model){

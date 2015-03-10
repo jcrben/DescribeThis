@@ -4,7 +4,6 @@ var AppModel = Backbone.Model.extend({
   initialize: function(params){
     // this.set('currentSong', new SongModel());
     // this.set('users', new Users({}));
-    debugger;
     this.set('library', new Articles()); // this should come from the database
     // this.set('library', new Articles(articleData)); // this works
     // this.get('library').fetch({success: function(coll, resp,  options) {

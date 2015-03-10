@@ -21,11 +21,13 @@
     <script src="views/AppView.js"></script>
 
     <div class="inputNewArticle">
-    <form>
-        <input style="display:inline" class="addUrl" type="text" size="35" placeholder="Insert URL"><input class="FetchURL" type="button" value="Fetch"><br>
-        <textarea class="addSummary" placeholder="Summarize the article" rows="10" cols="35"></textarea>
-        <input class="addTags" style="display:block" size="35" placeholder="Add comma-delimited tags"></input>
-        <input type="button" class="add" value="Add to library">
+    <form action="/newarticle" method="post">
+        <input name="url" style="display:inline" class="addUrl" type="text" size="35" placeholder="Insert URL">
+        <input name="title" style="display:inline" class="addTitle" type="text" size="35" placeholder="Insert Title">
+        <input class="FetchURL" type="button" value="Fetch title"><br>
+        <textarea name="summary" class="addSummary" placeholder="Summarize the article" rows="10" cols="35"></textarea>
+        <input name="tags" class="addTags" style="display:block" size="35" placeholder="Add comma-delimited tags"></input>
+        <input type="submit" class="add" value="Add to library">
     </form>
     </div>
 

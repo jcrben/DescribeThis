@@ -11,6 +11,8 @@ var Article = db.Model.extend({
   clicks: function() {
   },
   initialize: function(){
+    // console.log(this);
+    console.log('initializing new article');
     // this.on('creating', function(model, attrs, options){
     //   var shasum = crypto.createHash('sha1');
     //   shasum.update(model.get('url'));
