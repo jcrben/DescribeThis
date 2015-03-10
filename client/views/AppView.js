@@ -11,26 +11,31 @@ var AppView = Backbone.View.extend({
       var tags = $('.addTags').val();
       tags = tags.split(',');
       console.log(library);
+      var library = this.model.get('library')
       var newArticle = {
         url: url,
         title: title,
         summary: summary,
         tags: tags
       };
-      var library = this.model.get('library').add(newArticle);
+      // var library = this.model.get('library').add(newArticle);
       $.post('/newarticle', {
         data: JSON.stringify(newArticle),
         dataType: 'json',
         contentType: 'application/json',
-        success: function(data) {
-          // library.add(data);
-          // console.log(library);
-          // library.trigger('add');
-        },
-        error: function(err) {
-          console.log('error on post');
-        }
-      });
+      }).done(function() {
+        console.log('success posting!');
+        library.sync('read', library, {url: '/articles',
+                        error: function(err) {
+                        console.log('err syncing', err);
+                        },
+                        success: function() {
+                          console.log('success sycing');
+                        }
+                      });
+      }).fail(function() {
+        console.log('failed to post successfully');
+        });
     }.bind(this));
     //   this.model.get('library').add({url: url, summary: summary, tags: tags});
     // }.bind(this));

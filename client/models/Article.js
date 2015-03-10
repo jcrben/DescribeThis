@@ -1,5 +1,5 @@
 var Article = Backbone.Model.extend({
-  url: '/article'
+  url: '/article',
   defaults: {
     title: 'random title',
     author: 'unknown',

@@ -18,6 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // app.use(express.static('bower_components', '../../bower_components'));
 
 app.get('/articles', function(req, res) {
+  console.log('fetching articles');
   Articles.reset().fetch().then(function(articles) {
     res.send(200, articles.models);
   });
