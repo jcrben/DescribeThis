@@ -4,7 +4,7 @@ var articleData = [
     url: "placeholder url",
     title: "Javascript article",
     author: "Anonymous",
-    tags: [],
+    tags: ['random', 'decent'],
   },
   {
     url: "placeholder url",

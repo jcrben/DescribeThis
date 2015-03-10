@@ -13,10 +13,16 @@
     <script src="collections/Articles.js"></script>
     <script src="models/AppModel.js"></script>
 
-    <script src="views/PlayerView.js"></script>
     <script src="views/ArticlesView.js"></script>
-    <script src="views/ArticleView.js"></script>
+    <script src="views/ArticleShortView.js"></script>
     <script src="views/AppView.js"></script>
+
+    <div>
+        <input style="display:block" class="addUrl" type="text" size="35" placeholder="Insert URL">
+        <textarea class="addSummary" placeholder="Summarize the article" rows="10" cols="35"></textarea>
+        <input class="addTags" style="display:block" size="35" placeholder="Add comma-delimited tags"></input>
+        <button class="add" value="Submit">
+    </div>
 
     <script>
       $(function(){
