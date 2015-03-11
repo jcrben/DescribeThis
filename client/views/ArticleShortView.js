@@ -38,7 +38,7 @@ var ArticleShortView = Backbone.View.extend({
     console.log(this);
     var attrName = $(e.currentTarget).attr("class");
     $(e.currentTarget).replaceWith('<textarea class="editing" rows="15" cols="35">'+this.model.get(attrName)+'</textarea>' +
-    '<button style="display:inline" data-attrName'+attrName+' class="saveEdit">');
+    '<button style="display:inline" data-attrName'+attrName+' class="saveEdit">Update</button>');
     $('.saveEdit').data("attrName", attrName);
     $('.saveEdit').on('click', this.saveEdit.bind(this));
   },
