@@ -4,8 +4,8 @@ var ArticleShortView = Backbone.View.extend({
   tagName: 'div',
   className: 'article',
   template: _.template('<ul>' + 
-      '<li class="title"><%- title %></li>' + 
-      '<li class="summary"><%- summary %></li>' +
+      '<li class="title">Title: <%- title %></li>' + 
+      '<li class="summary"><div class="liSummary">Summary: <%- summary %></div</li>' +
       '<li class="url">URL: <%- url %></li>' + 
       '<li class="tags">Tags: ' +
       '<% for (var i = 0; i < tags.length; i++) {%>' +
@@ -37,7 +37,7 @@ var ArticleShortView = Backbone.View.extend({
     console.log('firing edit');
     console.log(this);
     var attrName = $(e.currentTarget).attr("class");
-    $(e.currentTarget).replaceWith('<textarea class="editing">'+this.model.get(attrName)+'</textarea>' +
+    $(e.currentTarget).replaceWith('<textarea class="editing" rows="15" cols="35">'+this.model.get(attrName)+'</textarea>' +
     '<button style="display:inline" data-attrName'+attrName+' class="saveEdit">');
     $('.saveEdit').data("attrName", attrName);
     $('.saveEdit').on('click', this.saveEdit.bind(this));
@@ -47,7 +47,6 @@ var ArticleShortView = Backbone.View.extend({
     console.log('firing saveEdit');
     var attrName = $(e.currentTarget).data('attrName');
     var updatedContent = $('.editing').val();
-    debugger;
     this.model.set(attrName, updatedContent);
     this.model.save();
   },
