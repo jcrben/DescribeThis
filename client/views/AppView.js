@@ -6,13 +6,19 @@ var AppView = Backbone.View.extend({
       e.preventDefault();
       var data = {};
       $(".formNewArticle").serializeArray()
-                          .map(function(x){data[x.name] = x.value;}); ;
+                          .map(function(x){data[x.name] = x.value;});
+      data.url = 'randomURL';
+      data.tags = 'random';
+      data.title = 'randomtitle';
+      data.summary = 'randomsummary';
       var tags = $('.addTags').val();
-      tags = tags.split(',');
+      // tags = tags.split(',');
       var library = this.model.get('library');
-      $.post('/newarticle', {
+      $.ajax('/article', {
+        method: 'POST',
         data: JSON.stringify(data),
         dataType: 'json',
+        processData: false,
         contentType: 'application/json',
       }).done(function(article) {
         console.log('success posting!');

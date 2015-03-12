@@ -25,6 +25,7 @@ db.knex.schema.hasTable('articles').then(function(exists) {
       article.string('code', 100);
       article.integer('visits');
       article.integer('user_id');
+      article.string('tags');
       article.timestamps();
     }).then(function (table) {
       console.log('Created Table', table);

@@ -1,0 +1,645 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"e",
+				"e"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/Users/MacbookRetina/hackreactor/2015-02-solo/client/index.html",
+			"settings":
+			{
+				"buffer_size": 1967,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "AppView.js",
+			"settings":
+			{
+				"buffer_size": 1566,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "ArticlesView.js",
+			"settings":
+			{
+				"buffer_size": 895,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "ArticleShortView.js",
+			"settings":
+			{
+				"buffer_size": 1920,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/MacbookRetina/hackreactor/2015-02-solo/client/models/AppModel.js",
+			"settings":
+			{
+				"buffer_size": 1387,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/MacbookRetina/hackreactor/2015-02-solo/server/app.js",
+			"settings":
+			{
+				"buffer_size": 2485,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/MacbookRetina/hackreactor/2015-02-solo/client/styles.css",
+			"settings":
+			{
+				"buffer_size": 632,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/MacbookRetina/hackreactor/2015-02-solo/server/db/cloudsourced.sqlite",
+			"settings":
+			{
+				"buffer_size": 10240,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Users/MacbookRetina/hackreactor/2015-02-solo/server/db/schema.js",
+			"settings":
+			{
+				"buffer_size": 1505,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "var db = require('../schema');\nvar Click = require('./click');\nvar crypto = require('crypto');\n\nconsole.log('entering Article');\nvar Article = db.Model.extend({\n  tableName: 'articles',\n  hasTimestamps: true,\n  defaults: {\n  },\n  clicks: function() {\n  },\n  initialize: function(){\n    // console.log(this);\n    // console.log('initializing new article');\n    // this.on('creating', function(model, attrs, options){\n    //   var shasum = crypto.createHash('sha1');\n    //   shasum.update(model.get('url'));\n    //   model.set('code', shasum.digest('hex').slice(0, 5));\n    // });\n  }\n});\n\nmodule.exports = Article;\n",
+			"file": "/Users/MacbookRetina/hackreactor/2015-02-solo/server/db/models/article.js",
+			"file_size": 615,
+			"file_write_time": 130704976090000000,
+			"settings":
+			{
+				"buffer_size": 615,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 287.0,
+		"selected_items":
+		[
+			[
+				"prefer",
+				"Preferences: SublimeLinter Settings – User"
+			],
+			[
+				"prefs",
+				"Preferences: Settings - User"
+			],
+			[
+				"Install",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/MacbookRetina/hackreactor/2015-02-solo",
+		"/Users/MacbookRetina/hackreactor/2015-02-solo/client",
+		"/Users/MacbookRetina/hackreactor/2015-02-solo/client/bower_components",
+		"/Users/MacbookRetina/hackreactor/2015-02-solo/client/bower_components/bootstrap",
+		"/Users/MacbookRetina/hackreactor/2015-02-solo/client/bower_components/bootstrap/dist",
+		"/Users/MacbookRetina/hackreactor/2015-02-solo/client/bower_components/bootstrap/dist/js",
+		"/Users/MacbookRetina/hackreactor/2015-02-solo/client/collections",
+		"/Users/MacbookRetina/hackreactor/2015-02-solo/client/models",
+		"/Users/MacbookRetina/hackreactor/2015-02-solo/client/views",
+		"/Users/MacbookRetina/hackreactor/2015-02-solo/server",
+		"/Users/MacbookRetina/hackreactor/2015-02-solo/server/db",
+		"/Users/MacbookRetina/hackreactor/2015-02-solo/server/db/collections",
+		"/Users/MacbookRetina/hackreactor/2015-02-solo/server/db/models"
+	],
+	"file_history":
+	[
+		"/Users/MacbookRetina/hackreactor/2015-02-toy-problems/allAnagrams/allAnagrams.test.js",
+		"/Users/MacbookRetina/hackreactor/2015-02-toy-problems/allAnagrams/allAnagrams.js",
+		"/Users/MacbookRetina/hackreactor/2015-02-toy-problems/allAnagrams/allAnagrams.",
+		"/Users/MacbookRetina/hackreactor/2015-02-solo/client/models/Article.js",
+		"/Users/MacbookRetina/hackreactor/2015-02-solo/client/views/ArticleShortView.js",
+		"/Users/MacbookRetina/hackreactor/2015-02-solo/client/collections/Articles.js",
+		"/Users/MacbookRetina/hackreactor/2015-02-solo/client/views/ArticlesView.js",
+		"/Users/MacbookRetina/hackreactor/2015-02-solo/server/db/cloudsourced.sqlite",
+		"/Users/MacbookRetina/hackreactor/2015-02-solo/client/styles.css",
+		"/Users/MacbookRetina/Library/Application Support/Sublime Text 3/Packages/User/SublimeLinter.sublime-settings",
+		"/Users/MacbookRetina/hackreactor/2015-02-solo/server/db/models/article.js",
+		"/Users/MacbookRetina/hackreactor/2015-02-solo/client/index.html",
+		"/Users/MacbookRetina/hackreactor/2015-02-solo/client/collections/Users.js",
+		"/Users/MacbookRetina/hackreactor/2015-02-solo/bower.json",
+		"/Users/MacbookRetina/collected_sites/webserver_example.js",
+		"/Users/MacbookRetina/hackreactor/2015-02-toy-problems/.git/MERGE_MSG",
+		"/Users/MacbookRetina/hackreactor/2015-02-data-structures/sprint-two/src/linkedList.js",
+		"/Users/MacbookRetina/hackreactor/2015-02-data-structures/sprint-two/src/queue.js",
+		"/Users/MacbookRetina/.bash_profile",
+		"/Users/MacbookRetina/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings",
+		"/Users/MacbookRetina/hackreactor/2015-02-toy-problems/hashTableResizing/hashTableResizing.js",
+		"/Users/MacbookRetina/hackreactor/2015-02-blackjack/src/views/CardView.coffee",
+		"/Users/MacbookRetina/hackreactor/2015-02-toy-problems/jsonp",
+		"/Users/MacbookRetina/hackreactor/2015-02-toy-problems/specs.js",
+		"/Users/MacbookRetina/hackreactor/2015-02-toy-problems/SpecRunner.html",
+		"/Users/MacbookRetina/hackreactor/2015-02-toy-problems/characterFrequency/characterFrequency.js",
+		"/Users/MacbookRetina/hackreactor/2015-02-chatterbox-client/curl_test.sh",
+		"/Users/MacbookRetina/benm/karma.conf.js",
+		"/Users/MacbookRetina/benm/views/index.handlebars",
+		"/Users/MacbookRetina/benm/spec/spechelper.js",
+		"/Users/MacbookRetina/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/MacbookRetina/node_modules/npm-debug.log",
+		"/Users/MacbookRetina/node_modules/ghost/test.js",
+		"/Users/MacbookRetina/node_modules/ghost/README.md",
+		"/Users/MacbookRetina/node_modules/ghost/ghost.js",
+		"/Users/MacbookRetina/node_modules/ghost/ghost",
+		"/Users/MacbookRetina/collected_sites/index.js",
+		"/Users/MacbookRetina/collected_sites/index.html",
+		"/Users/MacbookRetina/collected_sites/app.js",
+		"/Users/MacbookRetina/hackreactor/2015-02-toy-problems/primeTester/primeTester.js",
+		"/Users/MacbookRetina/webdesign/webdesign.html",
+		"/Users/MacbookRetina/webdesign/README.md",
+		"/Users/MacbookRetina/ajaxweb/.git/config",
+		"/Users/MacbookRetina/ajaxweb/README.txt",
+		"/Users/MacbookRetina/.ssh/config",
+		"/Users/MacbookRetina/.ssh/environment",
+		"/Users/MacbookRetina/bash_profile",
+		"/Users/MacbookRetina/Library/Application Support/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/Users/MacbookRetina/hackreactor/search",
+		"/*subl*",
+		"/Users/MacbookRetina/hackreactor/cask"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"LibraryView",
+			"/signup",
+			"ArticleView",
+			"counter",
+			"string",
+			"s",
+			"string",
+			"_escape",
+			"pkg.name",
+			"express"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/Users/MacbookRetina/hackreactor/2015-02-solo/client/index.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1967,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1042,
+								1042
+							]
+						],
+						"settings":
+						{
+							"history_list_is_closing": true,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 554.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "AppView.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1566,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								758,
+								758
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 32.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "ArticlesView.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 895,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								714,
+								714
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "ArticleShortView.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1920,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1533,
+								1533
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 257.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/Users/MacbookRetina/hackreactor/2015-02-solo/client/models/AppModel.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1387,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								224,
+								224
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 5,
+					"file": "/Users/MacbookRetina/hackreactor/2015-02-solo/server/app.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2485,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1590,
+								1590
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 422.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/Users/MacbookRetina/hackreactor/2015-02-solo/client/styles.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 632,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								317,
+								317
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/Users/MacbookRetina/hackreactor/2015-02-solo/server/db/cloudsourced.sqlite",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10240,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "/Users/MacbookRetina/hackreactor/2015-02-solo/server/db/schema.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1505,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "/Users/MacbookRetina/hackreactor/2015-02-solo/server/db/models/article.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 615,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								325,
+								325
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.429338289168,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "solo.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 256.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

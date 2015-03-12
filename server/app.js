@@ -12,25 +12,22 @@ var ip = "127.0.0.1";
 var app = express();    
 console.log(__dirname);           
 app.use(express.static('../client'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
 
-// app.use(express.static('bower_components', '../../bower_components'));
+var jsonParser = bodyParser.json();
+// app.use(bodyParser.json());
+// app.use(bodyParser.urlencoded({ extended: true }));
+var urlencodedParser = bodyParser.urlencoded({ extended: true });
 
 app.get('/articles', function(req, res) {
   console.log('fetching articles');
   Articles.reset().fetch().then(function(articles) {
-    res.send(200, articles.models);
+    res.status(200).send(articles.models);
   });
 });
 
 app.put('/article', function(req, res) {
   var id = req.body.id;
   var summary = req.body.summary;
-  console.log(id, summary);
-  // console.log(req.body);
-  // console.log(data);
-  // console.log('entering /article');
   new Article({id: id}).fetch().then(function(found) {
         found.set({summary: summary});
         found.save();
@@ -38,29 +35,17 @@ app.put('/article', function(req, res) {
         }).catch(function(err) {
             console.log('updating article err', err);
             });
-        // .set({summary: summary});
-                // .then(function() {
-                //   console.log('success');
-                // }).catch(function(err) {
-                //   console.log('err saving', err);
-                // });
 });
 
-app.post('/newarticle', function(req, res) {
-  var data = JSON.parse(req.body.data);
-  var url = data.url;
-  var title = data.title;
-  var summary = data.summary;
-  new Article({url: url}).fetch().then(function(found) {
+app.post('/article', jsonParser, function(req, res) {
+  var data = req.body;
+  new Article({url: data.url}).fetch().then(function(found) {
     console.log('entering new article');
     if (found) {
-      res.status(200).send('This is already in our database!');
+      console.log('already found');
+      res.status(409).send('This is already in our database!');
     } else {
-      new Article({
-        url: url,
-        title: title,
-        summary: summary
-      }).save().then(function(newArticle) {
+      new Article(data).save().then(function(newArticle) {
         console.log('save promise');
         Articles.add(newArticle);
         res.status(201).send(newArticle);
