@@ -1,5 +1,7 @@
 ### node etc ###
 
+# misc
+*.sublime-workspace
 #
 **/.DS_Store
 .DS_Store

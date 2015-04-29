@@ -62,5 +62,5 @@ app.post('/article', jsonParser, function(req, res) {
 //   res.send('../client/index.html');
 // });
 
-console.log('Listening on port'+ip+':'+port);
+console.log('Listening on port '+ip+':'+port);
 app.listen(8000);
