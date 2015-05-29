@@ -22,6 +22,7 @@ db.knex.schema.hasTable('articles').then(function(exists) {
       article.text('summary');
       article.string('url', 255);
       article.string('base_url', 255);
+      article.string('author', 255);
       article.string('code', 100);
       article.integer('visits');
       article.integer('user_id');

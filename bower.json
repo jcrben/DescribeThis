@@ -1,0 +1,22 @@
+{
+  "name": "cloudsourced",
+  "version": "0.0.0",
+  "homepage": "https://github.com/jcrben/cloudsourced",
+  "authors": [
+    "Ben Creasy <contact@bencreasy.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "underscore": "~1.8.3",
+    "backbone": "~1.2.0",
+    "bootstrap-sass-official": "~3.3.4"
+  }
+}

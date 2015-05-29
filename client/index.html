@@ -2,17 +2,16 @@
 <html>
   <head>
   <link rel="stylesheet" type="text/css" href="styles.css">
-  <script src="bower_components/jquery/jquery.js"></script>
+  <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/underscore/underscore.js"></script>
   <script src="bower_components/backbone/backbone.js"></script>
-  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
 
-  <script src="data/data.js"></script>
+  <!-- <script src="data/data.js"></script> -->
 
   <script src="models/Article.js"></script>
   <script src="collections/Articles.js"></script>
   <script src="models/AppModel.js"></script>
-
   <script src="views/ArticlesView.js"></script>
   <script src="views/ArticleShortView.js"></script>
   <script src="views/AppView.js"></script>
@@ -31,9 +30,9 @@
   </script>
   </head>
   <body>
+  
     <!-- Scripts may be placed anywhere on a page. But FYI, they block rendering of elements
      below them until after the scripts load-->
-
     <div class="inputNewArticle col-med-4">
     <form class="formNewArticle" action="/newarticle" method="post">
         <input name="url" style="display:inline" class="addUrl" type="text" size="35" placeholder="Insert URL">

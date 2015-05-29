@@ -1,5 +1,4 @@
 var Article = Backbone.Model.extend({
-  url: '/article',
   defaults: {
     title: 'random title',
     author: 'unknown',
@@ -17,7 +16,7 @@ var Article = Backbone.Model.extend({
 
   tag: function(tagName) {
     this.tags.push(tagName);
-  this.trigger('tag', this);
+    this.trigger('tag', this);
   }
 
 });

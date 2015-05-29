@@ -48,7 +48,8 @@ var ArticleShortView = Backbone.View.extend({
     var attrName = $(e.currentTarget).data('attrName');
     var updatedContent = $('.editing').val();
     this.model.set(attrName, updatedContent);
-    this.model.save();
+    var returnValue = this.model.save();
+    console.log(returnValue);
   },
 
   favorite: function() {

@@ -1,23 +1,21 @@
 var express = require('express');
+var cors = require('cors');
 var path = require('path');
 var db = require('./db/schema');
 var Articles = require('./db/collections/articles');
 var Article = require('./db/models/article');
-var bodyParser = require('body-parser');
+var jsonParser = require('body-parser').json();
 
 var port = 8000;
 var ip = "127.0.0.1";
 // ******* APPLICATION ******
 
 var app = express();    
-console.log(__dirname);           
 app.use(express.static('../client'));
+app.use(cors());
+app.use(jsonParser);
 
-var jsonParser = bodyParser.json();
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({ extended: true }));
-var urlencodedParser = bodyParser.urlencoded({ extended: true });
-
+// ***** ROUTES ******
 app.get('/articles', function(req, res) {
   console.log('fetching articles');
   Articles.reset().fetch().then(function(articles) {
@@ -25,7 +23,7 @@ app.get('/articles', function(req, res) {
   });
 });
 
-app.put('/article', function(req, res) {
+app.put('/articles/:id', jsonParser, function(req, res) {
   var id = req.body.id;
   var summary = req.body.summary;
   new Article({id: id}).fetch().then(function(found) {
@@ -35,10 +33,13 @@ app.put('/article', function(req, res) {
         }).catch(function(err) {
             console.log('updating article err', err);
             });
+
 });
 
-app.post('/article', jsonParser, function(req, res) {
+app.post('/articles', jsonParser, function(req, res) {
+  console.log('entering post to create')
   var data = req.body;
+  console.log('req.body', req.body);
   new Article({url: data.url}).fetch().then(function(found) {
     console.log('entering new article');
     if (found) {
@@ -57,10 +58,6 @@ app.post('/article', jsonParser, function(req, res) {
     console.log('retrieval error', err);
   });
 });
-
-// app.get('/', function(req, res) {
-//   res.send('../client/index.html');
-// });
 
 console.log('Listening on port '+ip+':'+port);
 app.listen(8000);

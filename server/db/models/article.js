@@ -2,7 +2,6 @@ var db = require('../schema');
 var Click = require('./click');
 var crypto = require('crypto');
 
-console.log('entering Article');
 var Article = db.Model.extend({
   tableName: 'articles',
   hasTimestamps: true,
