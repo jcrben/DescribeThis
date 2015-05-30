@@ -5,13 +5,14 @@ var db = require('./db/schema');
 var Articles = require('./db/collections/articles');
 var Article = require('./db/models/article');
 var jsonParser = require('body-parser').json();
+var path = require('path');
 
 var port = 8000;
 var ip = "127.0.0.1";
 // ******* APPLICATION ******
 
 var app = express();    
-app.use(express.static('../client'));
+app.use(express.static(path.join(__dirname, '/../client')));
 app.use(cors());
 app.use(jsonParser);
 
@@ -36,10 +37,10 @@ app.put('/articles/:id', jsonParser, function(req, res) {
 
 });
 
-app.post('/articles', jsonParser, function(req, res) {
-  console.log('entering post to create')
+app.post('/articles', function(req, res) {
   var data = req.body;
-  console.log('req.body', req.body);
+  data.tags = data.tags ? data.tags.toString() : '';
+  console.log('post->create w/data', data);
   new Article({url: data.url}).fetch().then(function(found) {
     console.log('entering new article');
     if (found) {
@@ -47,6 +48,7 @@ app.post('/articles', jsonParser, function(req, res) {
       res.status(409).send('This is already in our database!');
     } else {
       new Article(data).save().then(function(newArticle) {
+        console.log(newArticle);
         console.log('save promise');
         Articles.add(newArticle);
         res.status(201).send(newArticle);

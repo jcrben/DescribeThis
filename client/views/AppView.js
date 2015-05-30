@@ -8,6 +8,8 @@ var AppView = Backbone.View.extend({
       var data = {};
       $(".formNewArticle").serializeArray()
                           .map(function(x){data[x.name] = x.value;});
+
+      console.log(data.tags);
       library.create(new Article(data));
     });
   },

@@ -8,8 +8,8 @@ var ArticleShortView = Backbone.View.extend({
       '<li class="summary"><div class="liSummary">Summary: <%- summary %></div</li>' +
       '<li class="url">URL: <%- url %></li>' + 
       '<li class="tags">Tags: ' +
-      '<% for (var i = 0; i < tags.length; i++) {%>' +
-      '<button><%-tags[i]%></button><% if (i !== tags.length-1) {%>, <% } %>' +
+      '<% for (var i = 0; i < tags.split(",").length; i++) {%>' +
+      '<button><%-tags.split(",")[i]%></button><% if (i !== tags.split(",").length-1) {%>, <% } %>' +
       '<% } %>' +
     '</ul>'),
 

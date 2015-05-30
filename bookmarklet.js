@@ -1,6 +1,6 @@
 (function(){
   // the minimum version of jQuery we want
-  var v = '1.3.2';
+  var v = '2.1.4';
   var targetURL = 'http://backbonejs.org';
   console.log('entering bookmarklet');
 
@@ -26,16 +26,19 @@
     (function() {
       console.log('entering initialization');
         // Code goes here
-            var articleTitle = document.title;
+            var data = {
+              title: document.title,
+              url: window.location.href
+            };
             //alert(test);
-            // var saveAPI = window.location.origin + '/articles';
-            var saveAPI = 'http://localhost:8000/article';
+            var saveAPI = 'http://localhost:8000/articles';
             var saveArticle = function saveArticle(saveAPI, articleTitle) {
-              console.log('entering ajax request');
+              console.log('entering ajax request with data', data);
               $.ajax({
                 url: saveAPI,
                 method: 'POST',
-                data: articleTitle
+                contentType: 'application/json;charset=UTF-8',
+                data: JSON.stringify(data)
               })
               .done(function(data) {
                 console.log('Successfully recorded' + data);
@@ -45,6 +48,7 @@
               });
             };
 
+            console.log('articleTitle', articleTitle);
             saveArticle(saveAPI, articleTitle);
             // popitup(rss_url)
             // function popitup(url) {

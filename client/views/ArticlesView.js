@@ -8,15 +8,8 @@ var ArticlesView = Backbone.View.extend({
   },
 
   render: function(){
-    // to preserve event handlers on child nodes, we must call .detach() on them before overwriting with .html()
     // see http://api.jquery.com/detach/
     this.$el.children().detach();
-    // debugger;
-    // this.$el.html('<div class="container"><h3>Library</h3></div>').append(
-    //   this.collection.map(function(article){
-    //     return new ArticleShortView({model: article}).render();
-    //   })
-    // );
     this.$el.html('<h3>Library</h3>').append(
       this.collection.map(function(article){
         return new ArticleShortView({model: article}).render();
