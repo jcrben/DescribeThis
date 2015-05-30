@@ -4,6 +4,7 @@ var AppModel = Backbone.Model.extend({
   initialize: function(params){
     this.set('library', new Articles()); 
     this.get('library').fetch();
+    appRouter = new AppRouter();
   }
 
 });

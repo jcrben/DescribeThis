@@ -3,7 +3,7 @@
 # misc
 *.sublime-workspace
 *.sqlite
-
+*.scssc
 #
 **/.DS_Store
 .DS_Store

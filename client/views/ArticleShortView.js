@@ -3,7 +3,7 @@ var ArticleShortView = Backbone.View.extend({
 
   tagName: 'div',
   className: 'article',
-  template: _.template('<ul>' + 
+  template: _.template('<div><a href="/details/<%-id %>">Click</a> for details</div><ul>' + 
       '<li class="title">Title: <%- title %></li>' + 
       '<li class="summary"><div class="liSummary">Summary: <%- summary %></div</li>' +
       '<li class="url">URL: <%- url %></li>' + 

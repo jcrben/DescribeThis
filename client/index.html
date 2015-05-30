@@ -1,31 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-  <script src="bower_components/jquery/dist/jquery.js"></script>
-  <script src="bower_components/underscore/underscore.js"></script>
-  <script src="bower_components/backbone/backbone.js"></script>
-  <script src="bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
+  <link rel="stylesheet" href="/styles/bootstrap.css">
+  <link rel="stylesheet" type="text/css" href="/styles/styles.css">
+  <script src="/bower_components/jquery/dist/jquery.js"></script>
+  <script src="/bower_components/underscore/underscore.js"></script>
+  <script src="/bower_components/backbone/backbone.js"></script>
+  <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap.js"></script>
 
   <!-- <script src="data/data.js"></script> -->
-
-  <script src="models/Article.js"></script>
-  <script src="collections/Articles.js"></script>
-  <script src="models/AppModel.js"></script>
-  <script src="views/ArticlesView.js"></script>
-  <script src="views/ArticleShortView.js"></script>
-  <script src="views/AppView.js"></script>
+  <script src="/router.js"></script>
+  <script src="/models/Article.js"></script>
+  <script src="/collections/Articles.js"></script>
+  <script src="/models/AppModel.js"></script>
+  <script src="/views/ArticlesView.js"></script>
+  <script src="/views/ArticleShortView.js"></script>
+  <script src="/views/AppView.js"></script>
   <script>
     $(function(){
       // set up model objects
       // var library = new Articles({collection: articleData});
-      var app = new AppModel();
-
+      window.app = new AppModel();
+      Backbone.history.start({pushState: true});
+      $(document).on('click', 'a', function(e) {
+        e.preventDefault();
+        appRouter.navigate(e.target.pathname, {trigger: true
+        });
+      });
       // build a view for the top level of the whole app
-      var appView = new AppView({model: app});
-
-      // put the view onto the screen
-      $('body').append(appView.render());
     });
   </script>
   </head>
@@ -33,6 +35,10 @@
   
     <!-- Scripts may be placed anywhere on a page. But FYI, they block rendering of elements
      below them until after the scripts load-->
+    
+    <nav class="navbar navbar-default">
+      <a href="article">Articles</a>
+    </nav>
     <div class="inputNewArticle col-med-4">
     <form class="formNewArticle" action="/newarticle" method="post">
         <input name="url" style="display:inline" class="addUrl" type="text" size="35" placeholder="Insert URL">

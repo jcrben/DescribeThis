@@ -24,7 +24,7 @@ app.get('/articles', function(req, res) {
   });
 });
 
-app.put('/articles/:id', jsonParser, function(req, res) {
+app.put('/articles/:id', function(req, res) {
   var id = req.body.id;
   var summary = req.body.summary;
   new Article({id: id}).fetch().then(function(found) {
@@ -59,6 +59,10 @@ app.post('/articles', function(req, res) {
   }).catch(function(err) {
     console.log('retrieval error', err);
   });
+});
+
+app.get('*', function(request, response){
+  response.sendFile('client/index.html', {root: path.join(__dirname, '..')});
 });
 
 console.log('Listening on port '+ip+':'+port);
