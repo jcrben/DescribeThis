@@ -10,7 +10,7 @@ var AppView = Backbone.View.extend({
                           .map(function(x){data[x.name] = x.value;});
 
       console.log(data.tags);
-      library.create(new Article(data));
+      library.create(new Article(data), {wait: true});
     });
   },
 

@@ -6,6 +6,7 @@ var Articles = require('./db/collections/articles');
 var Article = require('./db/models/article');
 var jsonParser = require('body-parser').json();
 var path = require('path');
+var request = require('request');
 
 var port = 8000;
 var ip = "127.0.0.1";
@@ -28,12 +29,12 @@ app.put('/articles/:id', function(req, res) {
   var id = req.body.id;
   var summary = req.body.summary;
   new Article({id: id}).fetch().then(function(found) {
-        found.set({summary: summary});
-        found.save();
-        res.status(200).send(found);
-        }).catch(function(err) {
-            console.log('updating article err', err);
-            });
+    found.set({summary: summary});
+    found.save();
+    res.status(200).send(found);
+  }).catch(function(err) {
+    console.log('updating article err', err);
+  });
 
 });
 
@@ -46,18 +47,16 @@ app.post('/articles', function(req, res) {
     if (found) {
       console.log('already found');
       res.status(409).send('This is already in our database!');
-    } else {
-      new Article(data).save().then(function(newArticle) {
-        console.log(newArticle);
-        console.log('save promise');
-        Articles.add(newArticle);
-        res.status(201).send(newArticle);
-      }).catch(function(err) {
-        console.log('creation error', err);
-      });
+      return;
     }
+    return new Article(data).save();
+  }).then(function(newArticle) {
+      console.log('save promise');
+      Articles.add(newArticle);
+      res.status(201).send(newArticle);
+      return;
   }).catch(function(err) {
-    console.log('retrieval error', err);
+    console.log('post /articles error', err);
   });
 });
 
