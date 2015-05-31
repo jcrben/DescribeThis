@@ -6,9 +6,9 @@ var Articles = require('./db/collections/articles');
 var Article = require('./db/models/article');
 var jsonParser = require('body-parser').json();
 var path = require('path');
-var request = require('request');
+var rp = require('request-promise');
 
-var port = 8000;
+var port = process.env.PORT || 8000;
 var ip = "127.0.0.1";
 // ******* APPLICATION ******
 
@@ -49,12 +49,19 @@ app.post('/articles', function(req, res) {
       res.status(409).send('This is already in our database!');
       return;
     }
+    // check for valid URL; to check only for protocol, use first group
+    if ((/(?:http[s]*\:\/+)*(?:\w+\.)[\s\S]+/).test(data.url)) {
+      // check reddit API
+      var redditAPI = 'http://www.reddit.com/api/info.json?url='+data.url;
+      return rp(redditAPI);
+    }
+  }).then(function(redditData) {
+    console.log(redditData);
     return new Article(data).save();
-  }).then(function(newArticle) {
-      console.log('save promise');
-      Articles.add(newArticle);
-      res.status(201).send(newArticle);
-      return;
+  }).then(function (newArticle) {
+    Articles.add(newArticle);
+    res.status(201).send(newArticle);
+    return;
   }).catch(function(err) {
     console.log('post /articles error', err);
   });
@@ -65,4 +72,4 @@ app.get('*', function(request, response){
 });
 
 console.log('Listening on port '+ip+':'+port);
-app.listen(8000);
+app.listen(port);
