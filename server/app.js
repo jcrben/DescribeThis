@@ -7,9 +7,10 @@ var Article = require('./db/models/article');
 var jsonParser = require('body-parser').json();
 var path = require('path');
 var rp = require('request-promise');
-
 var port = process.env.PORT || 8000;
 var ip = "127.0.0.1";
+
+// test change
 // ******* APPLICATION ******
 
 var app = express();    
