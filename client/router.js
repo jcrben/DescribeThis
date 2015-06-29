@@ -6,7 +6,7 @@ var AppRouter = Backbone.Router.extend({
   },
 
   home: function() {
-    console.log('testing home');
+    console.log('testing home'); 
   },
 
   showArticles: function() {
