@@ -1,5 +1,5 @@
 {
-  "name": "CloudSourced",
+  "name": "DescribeThis",
   "version": "0.0.1",
   "description": "Store and tag articles",
   "main": "index.js",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jcrben/2015-02-solo.git"
+    "url": "https://github.com/jcrben/describethis.git"
   },
   "keywords": [
     "articles",
@@ -21,9 +21,9 @@
   "author": "Ben Creasy",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jcrben/2015-02-solo/issues"
+    "url": "https://github.com/jcrben/describethis/issues"
   },
-  "homepage": "https://github.com/jcrben/2015-02-solo",
+  "homepage": "https://github.com/jcrben/describethis",
   "dependencies": {
     "body-parser": "^1.12.0",
     "bookshelf": "^0.7.9",
